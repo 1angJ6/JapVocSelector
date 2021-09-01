@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Dropdown, Menu } from 'antd';
+import { Divider, Dropdown, Menu, Space, Switch } from 'antd';
 import { HeartOutlined } from "@ant-design/icons";
 import './VocabularyList.css';
 import { chinese_set_1, jap_set_1 } from '../constant/chapter_1';
@@ -14,6 +14,7 @@ class VocabularyList extends React.Component {
             jap_set: jap_set_1,
             selectedIndexes: this.randomNums(10, 0, chinese_set_1.length),
             selectedChapter: 0,
+            showAnswer: false,
         };
     }
 
@@ -49,6 +50,29 @@ class VocabularyList extends React.Component {
             selectedIndexes: this.randomNums(10, 0, chineseList[e.key].length),
             selectedChapter: e.key,
         });
+    }
+
+    showAnswer = () => {
+        this.setState({showAnswer: !this.state.showAnswer});
+    }
+
+    renderAnswer = () => {
+        return (
+                <div>
+                    {
+                        this.state.selectedIndexes.map(
+                            index => {
+                                return (
+                                    <div>
+                                        <span>{this.state.chinese_set[index]}</span>
+                                        <span className="answer">{this.state.jap_set[index]}</span>
+                                    </div>
+                                );
+                            }
+                        )
+                    }
+                </div>
+        );
     }
 
     render() {
@@ -96,11 +120,12 @@ class VocabularyList extends React.Component {
 
         return (
             <div>
-                <div>
+                <Space>
                     <Dropdown.Button onClick={this.updateIndexes} overlay={menu}>
                         単語生成
                     </Dropdown.Button>
-                </div>
+                    <Switch onChange={this.showAnswer} />
+                </Space>
                 <Divider orientation="left" plain>
                     第{Number(this.state.selectedChapter)+1}課
                 </Divider>
@@ -118,22 +143,8 @@ class VocabularyList extends React.Component {
                 <Divider orientation="left" plain>
                     答え
                 </Divider>
-                <div>
-                    {
-                        this.state.selectedIndexes.map(
-                            index => {
-                                return (
-                                    <div>
-                                        <span>{this.state.chinese_set[index]}</span>
-                                        <span className="answer">{this.state.jap_set[index]}</span>
-                                    </div>
-                                );
-                            }
-                        )
-                    }
-                </div>
+                { this.state.showAnswer && this.renderAnswer() }
             </div>
-            
         );
     }
 }
