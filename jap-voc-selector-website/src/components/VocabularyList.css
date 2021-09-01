@@ -1,1 +1,6 @@
 @import '~antd/dist/antd.css';
+
+.answer {
+    color: tomato;
+    margin-left: 10px;
+}
