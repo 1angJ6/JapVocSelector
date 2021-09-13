@@ -115,6 +115,42 @@ class VocabularyList extends React.Component {
                 <Menu.Item key="11" icon={<HeartOutlined />}>
                     第12課
                 </Menu.Item>
+                <Menu.Item key="12" icon={<HeartOutlined />}>
+                    第13課
+                </Menu.Item>
+                <Menu.Item key="13" icon={<HeartOutlined />}>
+                    第14課
+                </Menu.Item>
+                <Menu.Item key="14" icon={<HeartOutlined />}>
+                    第15課
+                </Menu.Item>
+                <Menu.Item key="15" icon={<HeartOutlined />}>
+                    第16課
+                </Menu.Item>
+                <Menu.Item key="16" icon={<HeartOutlined />}>
+                    第17課
+                </Menu.Item>
+                <Menu.Item key="17" icon={<HeartOutlined />}>
+                    第18課
+                </Menu.Item>
+                <Menu.Item key="18" icon={<HeartOutlined />}>
+                    第19課
+                </Menu.Item>
+                <Menu.Item key="19" icon={<HeartOutlined />}>
+                    第20課
+                </Menu.Item>
+                <Menu.Item key="20" icon={<HeartOutlined />}>
+                    第21課
+                </Menu.Item>
+                <Menu.Item key="21" icon={<HeartOutlined />}>
+                    第22課
+                </Menu.Item>
+                <Menu.Item key="22" icon={<HeartOutlined />}>
+                    第23課
+                </Menu.Item>
+                <Menu.Item key="23" icon={<HeartOutlined />}>
+                    第24課
+                </Menu.Item>
             </Menu>
         );
 
